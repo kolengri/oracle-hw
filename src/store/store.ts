@@ -1,5 +1,6 @@
-import { createStore } from 'easy-peasy';
+import { createStore, createTypedHooks } from 'easy-peasy';
 
-import { storeModel } from './model';
+import { storeModel, StoreModel } from './model';
 
+export const hooks = createTypedHooks<StoreModel>();
 export const store = createStore(storeModel);

@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import { ROOT_ID } from './config';
-import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store';
+import './styles/base.css';
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

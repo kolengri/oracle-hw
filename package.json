@@ -11,9 +11,12 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "easy-peasy": "^3.3.0",
+    "formik": "^2.1.4",
+    "qs": "^6.9.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
+    "react-use": "^13.27.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -38,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@types/qs": "^6.9.1",
+    "ts-essentials": "^6.0.2",
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-origin-ordered-imports-rule": "^1.2.2",
