@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { StoreProvider } from 'easy-peasy';
 import ReactDOM from 'react-dom';
 
 import App from './App';
 import { ROOT_ID } from './config';
 import * as serviceWorker from './serviceWorker';
-import { store } from './store';
 import './styles/base.css';
 
 // If you want your app to work offline and load faster, you can change
@@ -17,12 +15,7 @@ serviceWorker.unregister();
 const rootElement = document.getElementById(ROOT_ID);
 
 const render = (Component: React.FC) => {
-  return ReactDOM.render(
-    <StoreProvider store={store}>
-      <Component />
-    </StoreProvider>,
-    rootElement
-  );
+  return ReactDOM.render(<Component />, rootElement);
 };
 
 // Initial App render
