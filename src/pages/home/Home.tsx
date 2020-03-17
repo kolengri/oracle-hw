@@ -16,7 +16,7 @@ const HomeMemo: React.FC<HomeProps> = (props) => {
   const { fetch, state } = usePeople();
   const { status, content, error } = state;
   const [page, setPage] = React.useState(1);
-  const showTotal = content?.count;
+  const showTotal = !!content?.count;
 
   const formik = useFormik<SearchFormValues>({
     enableReinitialize: true,
@@ -56,8 +56,8 @@ const HomeMemo: React.FC<HomeProps> = (props) => {
         <SearchForm />
       </FormikProvider>
       {status === StoreStatus.Fetching && <Loader />}
-      {status === StoreStatus.Error && <ErrorMessage>{error || 'Unknown Error'}</ErrorMessage>}
       <main className="home__content">
+        {content?.results.length === 0 && <ErrorMessage>No results</ErrorMessage>}
         {content?.results.map((item, index) => (
           <People {...item} key={index} />
         ))}
