@@ -31,8 +31,6 @@ export const peoplesStore: PeopleStoreModel = {
   }),
   fetch: thunk(async (actions, payload) => {
     try {
-      console.log(actions);
-
       actions.fetchStart();
       const content = await fetchPeoples(payload);
       actions.fetchSuccess(content);

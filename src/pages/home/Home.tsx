@@ -58,8 +58,8 @@ const HomeMemo: React.FC<HomeProps> = (props) => {
       {status === StoreStatus.Fetching && <Loader />}
       {status === StoreStatus.Error && <ErrorMessage>{error || 'Unknown Error'}</ErrorMessage>}
       <main className="home__content">
-        {content?.results.map((item) => (
-          <People key={item.id} {...item} />
+        {content?.results.map((item, index) => (
+          <People {...item} key={index} />
         ))}
         <footer className="home__footer">
           <div>{showTotal && <div>Total: {content?.count}</div>}</div>

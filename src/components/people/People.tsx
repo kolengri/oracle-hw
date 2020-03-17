@@ -17,7 +17,7 @@ const PeopleMemo: React.FC<PeopleProps> = (props) => {
   const { name, gender, height, homeworld } = props;
   const homeWorldId = getPlanetId(homeworld);
   const { planet } = usePlanet(homeWorldId);
-  const homeworldName = planet?.content?.name;
+  const homeWorldName = planet?.content?.name;
 
   return (
     <article className="people">
@@ -25,12 +25,11 @@ const PeopleMemo: React.FC<PeopleProps> = (props) => {
         <h4>{name}</h4>
       </header>
       <ul className="people__main">
-        {Object.entries({ gender, height }).map(([name, value]) => (
-          <li key={name}>
-            {name}: {value}
+        {Object.entries({ gender, height, homeworld: homeWorldName || 'Loading...' }).map(([key, value]) => (
+          <li key={key}>
+            {key}: {value}
           </li>
         ))}
-        {homeworldName && <li>homeworld: {homeworldName}</li>}
       </ul>
     </article>
   );
