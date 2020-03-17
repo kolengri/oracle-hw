@@ -4,6 +4,7 @@ import { StoreProvider } from 'easy-peasy';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import { ROOT_ID } from './config';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store';
@@ -13,12 +14,14 @@ import { store } from './store';
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+const rootElement = document.getElementById(ROOT_ID);
+
 const render = (Component: React.FC) => {
   return ReactDOM.render(
     <StoreProvider store={store}>
       <Component />
     </StoreProvider>,
-    document.getElementById('root')
+    rootElement
   );
 };
 
