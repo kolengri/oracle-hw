@@ -1,5 +1,5 @@
 import { PagedResults, People, ResourceType } from '../models';
-import { createFetchPromise } from './createFetchPromise';
+import { api } from './api';
 import { createPath } from './createPath';
 
 export type Response = PagedResults<People>;
@@ -9,5 +9,5 @@ export type Query = {
 };
 
 export const fetchPeoples = async (query: Query): Promise<Response> => {
-  return createFetchPromise<Response>(createPath(ResourceType.People, query));
+  return api<Response>(createPath(ResourceType.People, query));
 };

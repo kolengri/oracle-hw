@@ -1,5 +1,5 @@
 export const api = async <T>(url: string, options?: RequestInit): Promise<T> => {
-  const response = await fetch(url, options);
+  const response = await fetch(url, { method: 'get', ...options });
 
   if (!response.ok) {
     console.error('Request failed: ', response);
