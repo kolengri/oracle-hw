@@ -8,6 +8,6 @@ export type Query = {
   page?: number;
 };
 
-export const fetchPeoples = async (query: Query): Promise<Response> => {
+export const fetchPeople = async (query: Query): Promise<Response> => {
   return api<Response>(createPath(ResourceType.People, query));
 };

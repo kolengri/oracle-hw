@@ -1,12 +1,12 @@
-import { peoplesStore, PeopleStoreModel } from './peoplesStore';
+import { peopleStore, PeopleStoreModel } from './peopleStore';
 import { planetsItemsStore, PlanetsItemsStoreModel } from './planetsItemsStore';
 
 export interface StoreModel {
-  peoples: PeopleStoreModel;
+  people: PeopleStoreModel;
   planetsItems: PlanetsItemsStoreModel;
 }
 
 export const storeModel: StoreModel = {
-  peoples: peoplesStore,
+  people: peopleStore,
   planetsItems: planetsItemsStore
 };

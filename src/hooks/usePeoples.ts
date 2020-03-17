@@ -4,9 +4,9 @@ import { hooks } from '../store';
 
 const { useStoreActions, useStoreState } = hooks;
 
-export const usePeoples = () => {
-  const state = useStoreState((s) => s.peoples);
-  const { fetch } = useStoreActions((s) => s.peoples);
+export const usePeople = () => {
+  const state = useStoreState((s) => s.people);
+  const { fetch } = useStoreActions((s) => s.people);
 
   useEffect(() => {
     fetch({});

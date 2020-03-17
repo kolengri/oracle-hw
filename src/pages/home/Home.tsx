@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FormikProvider, useFormik } from 'formik';
 
 import { ErrorMessage, Loader, People } from '../../components';
-import { usePeoples } from '../../hooks';
+import { usePeople } from '../../hooks';
 import { StoreStatus } from '../../models';
 import { SearchForm, SearchFormValues } from './SearchForm';
 
@@ -13,7 +13,7 @@ import './styles.css';
 export type HomeProps = {};
 
 const HomeMemo: React.FC<HomeProps> = (props) => {
-  const { fetch, state } = usePeoples();
+  const { fetch, state } = usePeople();
   const { status, content, error } = state;
   const [page, setPage] = React.useState(1);
   const showTotal = content?.count;

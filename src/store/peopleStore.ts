@@ -1,6 +1,6 @@
 import { Action, action, Thunk, thunk } from 'easy-peasy';
 
-import { fetchPeoples, Query } from '../api/fetchPeoples';
+import { fetchPeople, Query } from '../api/fetchPeople';
 import { PagedResults, People, Store, StoreStatus } from '../models';
 
 export type Content = PagedResults<People>;
@@ -12,7 +12,7 @@ export interface PeopleStoreModel extends Store<Content | undefined> {
   fetchStart: Action<PeopleStoreModel>;
 }
 
-export const peoplesStore: PeopleStoreModel = {
+export const peopleStore: PeopleStoreModel = {
   status: StoreStatus.Empty,
   content: undefined,
   error: null,
@@ -32,7 +32,7 @@ export const peoplesStore: PeopleStoreModel = {
   fetch: thunk(async (actions, payload) => {
     try {
       actions.fetchStart();
-      const content = await fetchPeoples(payload);
+      const content = await fetchPeople(payload);
       actions.fetchSuccess(content);
     } catch (error) {
       actions.fetchError(error);
