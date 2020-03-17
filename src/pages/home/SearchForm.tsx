@@ -25,7 +25,7 @@ const SearchFormMemo: React.FC<SearchFormProps> = (props) => {
 
   return (
     <>
-      <Field className="home__search-field" name={names('search')} />
+      <Field autoFocus placeholder="Search for hero" className="home__search-field" name={names('search')} />
     </>
   );
 };
