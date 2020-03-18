@@ -57,6 +57,7 @@ const HomeMemo: React.FC<HomeProps> = (props) => {
       </FormikProvider>
       {status === StoreStatus.Fetching && <Loader />}
       <main className="home__content">
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         {content?.results.length === 0 && <ErrorMessage>No results</ErrorMessage>}
         {content?.results.map((item, index) => (
           <People {...item} key={index} />
