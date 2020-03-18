@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { StoreProvider } from 'easy-peasy';
+
 import { store } from './store';
 
 import { Home } from './pages';
