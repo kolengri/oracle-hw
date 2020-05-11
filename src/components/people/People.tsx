@@ -8,7 +8,7 @@ import './styles.css';
 export type PeopleProps = PeopleModel;
 
 export const getPlanetId = (str: string) => {
-  const [t, idStr] = str.split(createPath(ResourceType.Planet));
+  const [, idStr] = str.split(createPath(ResourceType.Planet));
 
   const [, id] = idStr.split('/');
   return id;
